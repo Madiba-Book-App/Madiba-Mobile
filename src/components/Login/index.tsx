@@ -9,18 +9,13 @@ interface Props {}
 
 const Register = (props: Props) => {
   return (
-    <View
-      style={[
-        commonStyles.flex1,
-        commonStyles.bgColorPrimary,
-        commonStyles.xlgPaddingTop,
-      ]}>
+    <View style={[commonStyles.flex1, commonStyles.bgColorPrimary]}>
+      <View style={{height: '40%'}} />
       <View
         style={[
           commonStyles.bgColorWhite,
           commonStyles.mdPadding,
           commonStyles.flex1,
-          commonStyles.xlgMarginTop,
           commonStyles.borderRadius15,
         ]}>
         <Text
@@ -32,9 +27,7 @@ const Register = (props: Props) => {
           Get started
         </Text>
         <View>
-          <Input placeholder="Enter your full name" label="Name" />
           <Input placeholder="Enter your email" label="Email" />
-          <Input placeholder="Enter your phone number" label="Phone number" />
           <Input
             secureTextEntry
             placeholder="Enter password"
@@ -42,16 +35,13 @@ const Register = (props: Props) => {
           />
         </View>
         <View style={[commonStyles.mdPaddingTop]}>
-          <Button title="Sign up" full />
+          <Button title="Login" full />
           <Text>
-            Already have any account{' '}
+            Do't have account{' '}
             <Link to="">
               <Text
-                style={[
-                  commonStyles.smPaddingLeft,
-                  commonStyles.textColorInfo,
-                ]}>
-                Login
+                style={[commonStyles.mdMarginLeft, commonStyles.textColorInfo]}>
+                Sign up
               </Text>
             </Link>
           </Text>
