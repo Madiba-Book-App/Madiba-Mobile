@@ -4,6 +4,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import HomeIcon from 'src/assets/icons/home.svg';
 import HomeActiveIcon from 'src/assets/icons/home-active.svg';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import colors from 'src/utils/colors';
 import HomeStack from './HomeStack';
@@ -16,10 +17,14 @@ const getTabIcon = (name: string): any => {
   let comps = {
     HOME_SCREEN: <HomeIcon />,
     HOME_SCREEN_ACTIVE: <HomeActiveIcon />,
-    BOOKS_SCREEN: <HomeActiveIcon />,
-    BOOKS_SCREEN_ACTIVE: <HomeActiveIcon />,
-    BORROW_SCREEN: <HomeActiveIcon />,
-    BORROW_SCREEN_ACTIVE: <HomeActiveIcon />,
+    BOOKS_SCREEN: <Icon name="book" size={25} color={colors.primary} />,
+    BOOKS_SCREEN_ACTIVE: (
+      <Icon name="book" size={25} color={colors.secondary} />
+    ),
+    BORROW_SCREEN: <Icon name="cart" size={25} color={colors.primary} />,
+    BORROW_SCREEN_ACTIVE: (
+      <Icon name="cart" size={25} color={colors.secondary} />
+    ),
   };
 
   return comps[name];
@@ -50,8 +55,8 @@ function StackNavigation() {
         options={{
           tabBarIcon: ({focused}) =>
             focused
-              ? getTabIcon(`${HOME_SCREEN}_ACTIVE`)
-              : getTabIcon(HOME_SCREEN),
+              ? getTabIcon(`${BOOKS_SCREEN}_ACTIVE`)
+              : getTabIcon(BOOKS_SCREEN),
           tabBarActiveTintColor: colors.primary,
           tabBarStyle: {paddingTop: 10},
           tabBarIconStyle: {marginBottom: 5},
@@ -65,8 +70,8 @@ function StackNavigation() {
         options={{
           tabBarIcon: ({focused}) =>
             focused
-              ? getTabIcon(`${HOME_SCREEN}_ACTIVE`)
-              : getTabIcon(HOME_SCREEN),
+              ? getTabIcon(`${BORROW_SCREEN}_ACTIVE`)
+              : getTabIcon(BORROW_SCREEN),
           tabBarActiveTintColor: colors.primary,
           tabBarStyle: {paddingTop: 10},
           tabBarIconStyle: {marginBottom: 5},
