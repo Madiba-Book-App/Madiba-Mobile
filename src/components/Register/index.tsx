@@ -2,6 +2,7 @@ import {Link} from '@react-navigation/native';
 import React from 'react';
 import {Text, View} from 'react-native';
 import commonStyles from 'src/assets/styles';
+import {LOGIN_SCREEN} from 'src/constants/screens';
 import Button from '../common/Button';
 import Input from '../common/Input';
 
@@ -45,7 +46,7 @@ const Register = (props: Props) => {
           <Button title="Sign up" full />
           <Text>
             Already have any account{' '}
-            <Link to="">
+            <Link to={{screen: LOGIN_SCREEN}}>
               <Text
                 style={[
                   commonStyles.smPaddingLeft,

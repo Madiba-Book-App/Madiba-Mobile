@@ -1,9 +1,11 @@
-import {Link} from '@react-navigation/native';
 import React from 'react';
+import {Link} from '@react-navigation/native';
 import {Text, View} from 'react-native';
+
 import commonStyles from 'src/assets/styles';
 import Button from '../common/Button';
 import Input from '../common/Input';
+import {REGISTER_SCREEN} from 'src/constants/screens';
 
 interface Props {}
 
@@ -38,7 +40,7 @@ const Register = (props: Props) => {
           <Button title="Login" full />
           <Text>
             Do't have account{' '}
-            <Link to="">
+            <Link to={{screen: REGISTER_SCREEN}}>
               <Text
                 style={[commonStyles.mdMarginLeft, commonStyles.textColorInfo]}>
                 Sign up

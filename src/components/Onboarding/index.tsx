@@ -1,8 +1,12 @@
 import React from 'react';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import Swiper from 'react-native-swiper';
+import {useNavigation} from '@react-navigation/native';
 import commonStyles from 'src/assets/styles';
+import Swiper from 'react-native-swiper';
+
 import {OnboardingPage} from 'src/components/common';
+import {REGISTER_SCREEN} from 'src/constants/screens';
 interface Props {}
 const styles = StyleSheet.create({
   wrapper: {},
@@ -32,6 +36,7 @@ const styles = StyleSheet.create({
 });
 
 const Onboarding = (props: Props) => {
+  const {navigate} = useNavigation<NativeStackNavigationProp<any, any>>();
   return (
     <Swiper style={styles.wrapper}>
       <View
@@ -51,7 +56,7 @@ const Onboarding = (props: Props) => {
             commonStyles.flexColumn,
             commonStyles.justifyContentEnd,
           ]}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigate(REGISTER_SCREEN)}>
             <Text style={[commonStyles.textColorInfo]}>Skip</Text>
           </TouchableOpacity>
         </View>
@@ -72,7 +77,7 @@ const Onboarding = (props: Props) => {
             commonStyles.flexColumn,
             commonStyles.justifyContentEnd,
           ]}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigate(REGISTER_SCREEN)}>
             <Text style={[commonStyles.textColorInfo]}>Skip</Text>
           </TouchableOpacity>
         </View>
@@ -93,7 +98,8 @@ const Onboarding = (props: Props) => {
               commonStyles.bgColorPrimaryBlue,
               commonStyles.mdPadding,
               commonStyles.borderRadius4,
-            ]}>
+            ]}
+            onPress={() => navigate(REGISTER_SCREEN)}>
             <Text style={[commonStyles.textColorWhite, commonStyles.bold]}>
               Get started
             </Text>
