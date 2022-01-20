@@ -1,19 +1,23 @@
+import React, {useRef} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import React from 'react';
 import {FlatList, Image, Text, TouchableOpacity, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/Ionicons';
 import commonStyles from 'src/assets/styles';
 import {BOOKS_SCREEN} from 'src/constants/screens';
+import BottomSheet from '../common/BottomSheet';
 import Button from '../common/Button';
 import Card from '../common/Card';
+import CheckBox from '@react-native-community/checkbox';
+import colors from 'src/utils/colors';
 
 interface Props {}
 
 const ViewBook = (props: Props) => {
   const {goBack, navigate} =
     useNavigation<NativeStackNavigationProp<any, any>>();
+  const ref = useRef();
   const DATA = [
     {
       id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -22,7 +26,7 @@ const ViewBook = (props: Props) => {
         'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/romantic-love-story-book-cover-design-template-a1188e523cb9f6495f3c022a1d9d2928_screen.jpg?ts=1637008707',
     },
     {
-      id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+      id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f66',
       title: 'Second Item',
       imageUrl:
         'https://s2982.pcdn.co/wp-content/uploads/2019/02/breathless_by_beverly_jenkins_cover.jpg.optimal.jpg',
@@ -88,6 +92,51 @@ const ViewBook = (props: Props) => {
   };
   return (
     <View>
+      <BottomSheet ref={ref} height={250}>
+        <View style={[commonStyles.mdPadding]}>
+          <Text style={[commonStyles.smText, commonStyles.bold]}>
+            Select payment type
+          </Text>
+          <View>
+            <View style={[commonStyles.flexRow, commonStyles.alignItemsCenter]}>
+              <CheckBox
+                onTintColor={colors.secondary}
+                onCheckColor={colors.secondary}
+              />
+              <View style={[commonStyles.mdPaddingLeft]}>
+                <Image
+                  source={{
+                    uri: 'https://www.seekpng.com/png/full/69-691715_mtn-mm-logo-generic-mtn-mobile-money-logo.png',
+                  }}
+                  style={{height: 50, width: 70}}
+                />
+              </View>
+            </View>
+            <View
+              style={[
+                commonStyles.flexRow,
+                commonStyles.alignItemsCenter,
+                commonStyles.mdPaddingTop,
+              ]}>
+              <CheckBox
+                onTintColor={colors.secondary}
+                onCheckColor={colors.secondary}
+              />
+              <View style={[commonStyles.mdPaddingLeft]}>
+                <Image
+                  source={{
+                    uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/1280px-MasterCard_Logo.svg.png',
+                  }}
+                  style={{height: 50, width: 82}}
+                />
+              </View>
+            </View>
+          </View>
+          <View style={[commonStyles.lgPaddingTop]}>
+            <Button full title="Proceed" />
+          </View>
+        </View>
+      </BottomSheet>
       <View style={[commonStyles.mdPadding]}>
         <SafeAreaView>
           <Icon name="arrow-back" size={30} onPress={() => goBack()} />
@@ -114,7 +163,7 @@ const ViewBook = (props: Props) => {
             <Text style={[commonStyles.smPaddingTop]}>by Nirat Bhatnager</Text>
             <Text style={[commonStyles.mdPaddingTop]}>6 books lef</Text>
             <View style={[commonStyles.mdPaddingTop]}>
-              <Button title="Borrow book" />
+              <Button title="Borrow book" onPress={() => ref.current.open()} />
             </View>
           </View>
         </View>

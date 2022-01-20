@@ -77,7 +77,7 @@ const Books = (props: Props) => {
           ListHeaderComponent={
             <View>
               <Text style={[commonStyles.bold, commonStyles.smText]}>
-                My Books
+                Available Books
               </Text>
             </View>
           }
