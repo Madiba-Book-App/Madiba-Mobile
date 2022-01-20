@@ -18,7 +18,7 @@ const Books = (props: Props) => {
       imageUrl: 'https://m.media-amazon.com/images/I/51RXND+8SUL.jpg',
     },
     {
-      id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+      id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f65',
       title: 'Second Item',
       imageUrl:
         'https://images.routledge.com/common/jackets/crclarge/978149877/9781498776264.jpg',
@@ -59,16 +59,20 @@ const Books = (props: Props) => {
         'https://images.routledge.com/common/jackets/originals/978036776/9780367768157.tif',
     },
   ];
-  const renderItem = ({item}) => {
+  const renderItem = ({item}: any) => {
     return <BookCard imageUrl={item.imageUrl} />;
   };
   return (
-    <View style={[commonStyles.mdPadding]}>
+    <View
+      style={[
+        commonStyles.mdPadding,
+        commonStyles.flex1,
+        commonStyles.lgMarginBottom,
+      ]}>
       <SafeAreaView>
         <Icon name="arrow-back" size={30} onPress={() => goBack()} />
       </SafeAreaView>
-
-      <View>
+      <View style={[commonStyles.xlgMarginBottom]}>
         <FlatList
           ListHeaderComponent={
             <View>

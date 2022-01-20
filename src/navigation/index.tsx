@@ -5,6 +5,7 @@ import {
   Theme,
 } from '@react-navigation/native';
 
+import StackNavigation from './StackNavigation';
 import TabNavigation from './TabNavigation';
 
 import colors from 'src/utils/colors';
@@ -16,12 +17,12 @@ const AppTheme: Theme = {
     background: colors.white as string,
   },
 };
+const isAuth = true;
 
 export default function App() {
   return (
     <NavigationContainer theme={AppTheme}>
-      {/* <StackNavigation /> */}
-      <TabNavigation />
+      {(isAuth && <TabNavigation />) || <StackNavigation />}
     </NavigationContainer>
   );
 }

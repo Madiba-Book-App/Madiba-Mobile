@@ -16,6 +16,7 @@ export interface BackgroundColors {
   bgColorPrimaryDark: {backgroundColor: string};
   bgColorSecondary: {backgroundColor: string};
   bgColorLightGrey: {backgroundColor: string};
+  bgColorCardGray: {backgroundColor: string};
 }
 
 const bgColors = Object.keys(colors).map((key: string) => ({

@@ -1,15 +1,18 @@
 import React from 'react';
-import {Link} from '@react-navigation/native';
+import {Link, useNavigation} from '@react-navigation/native';
 import {Text, View} from 'react-native';
 
 import commonStyles from 'src/assets/styles';
 import Button from '../common/Button';
 import Input from '../common/Input';
-import {REGISTER_SCREEN} from 'src/constants/screens';
+import {HOME_SCREEN, REGISTER_SCREEN} from 'src/constants/screens';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 interface Props {}
 
 const Register = (props: Props) => {
+  const {navigate} = useNavigation<NativeStackNavigationProp<any, any>>();
+
   return (
     <View style={[commonStyles.flex1, commonStyles.bgColorPrimary]}>
       <View style={{height: '40%'}} />
@@ -37,7 +40,7 @@ const Register = (props: Props) => {
           />
         </View>
         <View style={[commonStyles.mdPaddingTop]}>
-          <Button title="Login" full />
+          <Button title="Login" full onPress={() => navigate(HOME_SCREEN)} />
           <Text>
             Do't have account{' '}
             <Link to={{screen: REGISTER_SCREEN}}>

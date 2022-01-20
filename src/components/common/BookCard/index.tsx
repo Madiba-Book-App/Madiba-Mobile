@@ -1,6 +1,6 @@
 import {Link} from '@react-navigation/native';
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, Text, View} from 'react-native';
 import commonStyles from 'src/assets/styles';
 import {VIEW_BOOK_SCREEN} from 'src/constants/screens';
 import Card from '../Card';
@@ -15,7 +15,7 @@ const BookCard = ({imageUrl}: Props) => {
       style={[
         commonStyles.borderRadius10,
         commonStyles.shadow4,
-        commonStyles.bgColorLightGrey,
+        commonStyles.bgColorCardGray,
         commonStyles.xlgMarginTop,
         {
           height: 100,
