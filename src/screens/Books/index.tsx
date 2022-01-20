@@ -1,14 +1,8 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import BooksComponent from 'src/components/Books';
 
-interface Props {}
-
-const Books = (props: Props) => {
-  return (
-    <View>
-      <Text>Books</Text>
-    </View>
-  );
+const Books = () => {
+  return <BooksComponent />;
 };
 
 export default Books;

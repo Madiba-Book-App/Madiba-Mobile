@@ -15,8 +15,13 @@ const Header = (props: Props) => {
             commonStyles.justifyContentSpaceBetween,
             commonStyles.alignItemsCenter,
           ]}>
-          <View>
-            <Icon name="menu" size={30} />
+          <View
+            style={[
+              {borderRadius: 100},
+              commonStyles.bgColorPrimaryDark,
+              commonStyles.smPadding,
+            ]}>
+            <Icon name="person" size={20} color={colors.white} />
           </View>
           <View
             style={[
@@ -28,13 +33,8 @@ const Header = (props: Props) => {
             <View>
               <Icon name="search" size={30} />
             </View>
-            <View
-              style={[
-                {borderRadius: 100},
-                commonStyles.bgColorPrimaryDark,
-                commonStyles.smPadding,
-              ]}>
-              <Icon name="person" size={20} color={colors.white} />
+            <View>
+              <Icon name="notifications" size={30} />
             </View>
           </View>
         </View>
