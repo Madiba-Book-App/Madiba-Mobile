@@ -1,11 +1,13 @@
 import React from 'react';
-import {StyleSheet, View, SafeAreaView} from 'react-native';
+import {StyleSheet, View, SafeAreaView, Image} from 'react-native';
 import commonStyles from 'src/assets/styles';
 import Icon from 'react-native-vector-icons/Ionicons';
 import colors from 'src/utils/colors';
 interface Props {}
 
 const Header = (props: Props) => {
+  const imageURL =
+    'https://bestprofilepix.com/wp-content/uploads/2014/07/cute-girls-profile-pictures-for-facebook-with-apple-I-phone.jpg';
   return (
     <View>
       <SafeAreaView>
@@ -15,14 +17,25 @@ const Header = (props: Props) => {
             commonStyles.justifyContentSpaceBetween,
             commonStyles.alignItemsCenter,
           ]}>
-          <View
-            style={[
-              {borderRadius: 100},
-              commonStyles.bgColorPrimaryDark,
-              commonStyles.smPadding,
-            ]}>
-            <Icon name="person" size={20} color={colors.white} />
-          </View>
+          {imageURL &&
+            ((
+              <Image
+                source={{
+                  uri: imageURL,
+                }}
+                style={{height: 70, width: 70, borderRadius: 100}}
+              />
+            ) || (
+              <View
+                style={[
+                  {borderRadius: 100},
+                  commonStyles.bgColorPrimaryDark,
+                  commonStyles.smPadding,
+                ]}>
+                <Icon name="person" size={40} color={colors.white} />
+              </View>
+            ))}
+
           <View
             style={[
               commonStyles.flexRow,

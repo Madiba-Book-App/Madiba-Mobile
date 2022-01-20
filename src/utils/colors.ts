@@ -19,6 +19,7 @@ type ColorsType = {
   primaryGreen?: string;
   info?: string;
   primaryLight?: string;
+  cardGray?: string;
 };
 
 const colors: ColorsType = {
@@ -29,7 +30,8 @@ const colors: ColorsType = {
   black: '#000',
   danger: '#E4002B',
   primaryGrey: '#E5E5E5',
-  lightGrey: '#F8F8F8',
+  cardGray: '#F8F8F8',
+  lightGrey: '#E1E1E1',
   primaryDark: '#000000',
   transparent: 'transparent',
   darkGray: '#514844',
