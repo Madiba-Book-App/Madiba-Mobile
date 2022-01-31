@@ -3,9 +3,13 @@ import {StyleSheet, View, SafeAreaView, Image} from 'react-native';
 import commonStyles from 'src/assets/styles';
 import Icon from 'react-native-vector-icons/Ionicons';
 import colors from 'src/utils/colors';
+import {useNavigation} from '@react-navigation/native';
+import {BOOKS_SCREEN} from 'src/constants/screens';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 interface Props {}
 
 const Header = (props: Props) => {
+  const {navigate} = useNavigation<NativeStackNavigationProp<any, any>>();
   const imageURL =
     'https://bestprofilepix.com/wp-content/uploads/2014/07/cute-girls-profile-pictures-for-facebook-with-apple-I-phone.jpg';
   return (
@@ -40,14 +44,18 @@ const Header = (props: Props) => {
             style={[
               commonStyles.flexRow,
               commonStyles.alignItemsCenter,
-              {width: '30%'},
+              {width: '25%'},
               commonStyles.justifyContentSpaceBetween,
             ]}>
             <View>
-              <Icon name="search" size={30} />
+              <Icon
+                name="search"
+                size={30}
+                onPress={() => navigate(BOOKS_SCREEN)}
+              />
             </View>
             <View>
-              <Icon name="notifications" size={30} />
+              <Icon name="settings" size={30} />
             </View>
           </View>
         </View>
@@ -57,5 +65,3 @@ const Header = (props: Props) => {
 };
 
 export default Header;
-
-const styles = StyleSheet.create({});

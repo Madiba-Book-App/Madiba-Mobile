@@ -1,5 +1,10 @@
 import * as React from 'react';
-import {HOME_SCREEN, BORROW_SCREEN, BOOKS_SCREEN} from 'src/constants/screens';
+import {
+  HOME_SCREEN,
+  BORROW_SCREEN,
+  BOOKS_SCREEN,
+  EVENT_SCREEN,
+} from 'src/constants/screens';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import HomeIcon from 'src/assets/icons/home.svg';
@@ -10,6 +15,7 @@ import colors from 'src/utils/colors';
 import HomeStack from './HomeStack';
 import BorrowBookStack from './BorrowBookStack';
 import BooksStack from './BooksStack';
+import EventsStack from './EventsStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -23,6 +29,12 @@ const getTabIcon = (name: string): any => {
     ),
     BORROW_SCREEN: <Icon name="cart" size={25} color={colors.primary} />,
     BORROW_SCREEN_ACTIVE: (
+      <Icon name="cart" size={25} color={colors.secondary} />
+    ),
+    EVENT_SCREEN: (
+      <Icon name="notifications" size={25} color={colors.primary} />
+    ),
+    EVENT_SCREEN_ACTIVE: (
       <Icon name="cart" size={25} color={colors.secondary} />
     ),
   };
@@ -72,6 +84,21 @@ function StackNavigation() {
             focused
               ? getTabIcon(`${BORROW_SCREEN}_ACTIVE`)
               : getTabIcon(BORROW_SCREEN),
+          tabBarActiveTintColor: colors.primary,
+          tabBarStyle: {paddingTop: 10},
+          tabBarIconStyle: {marginBottom: 5},
+          headerShown: false,
+        }}
+      />
+      <Tab.Screen
+        key={EVENT_SCREEN}
+        name="Events"
+        component={EventsStack}
+        options={{
+          tabBarIcon: ({focused}) =>
+            focused
+              ? getTabIcon(`${EVENT_SCREEN}_ACTIVE`)
+              : getTabIcon(EVENT_SCREEN),
           tabBarActiveTintColor: colors.primary,
           tabBarStyle: {paddingTop: 10},
           tabBarIconStyle: {marginBottom: 5},

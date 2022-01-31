@@ -23,49 +23,37 @@ const ViewBook = (props: Props) => {
       id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
       title: 'First Item',
       imageUrl:
-        'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/romantic-love-story-book-cover-design-template-a1188e523cb9f6495f3c022a1d9d2928_screen.jpg?ts=1637008707',
+        'https://images-na.ssl-images-amazon.com/images/I/51rtZ928r0L.jpg',
     },
     {
       id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f66',
       title: 'Second Item',
       imageUrl:
-        'https://s2982.pcdn.co/wp-content/uploads/2019/02/breathless_by_beverly_jenkins_cover.jpg.optimal.jpg',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtOs2y4H9o0z9hMBNxlt_pYrQ1hYSYx7LfxyTlLb-_T6NpuzBLW_YWTqzAJoc3UVTWKV0&usqp=CAU',
     },
     {
       id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
       title: 'Second Item',
       imageUrl:
-        'https://mir-s3-cdn-cf.behance.net/project_modules/fs/b729f675305113.5c48c4442e789.jpg',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ-zCfcc7gOQ18WS3A7BLzxluiFbXD2xg1yw&usqp=CAU',
     },
     {
       id: '58694a0f-3da1-471f-bd96-145571e29d72',
       title: 'Third Item',
       imageUrl:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAVcXdjPPqJlA6Ou5vHgWB07qRfcmqO9g4Uw&usqp=CAU',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7AFQjZfHfItcIjX54pC5TKVq4BMf1aDLmWSl0U8NAGTSQhQ7TZ-Nqk1frEB20jI8Mx68&usqp=CAU',
     },
     {
       id: '58694a0f-3da1-471f-bd96-145571e29d73',
       title: 'Third Item',
       imageUrl:
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaL_iRtR1ERL0gxCYmi79mEzgZG1vqP5eHPfnlX99Opa37uHO-s0Mxbx0NY4-xAJ3rIMs&usqp=CAU',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgz1rjLWQsjSNIBuJ68FDFHGyS7W5oKsYusw&usqp=CAU',
     },
     {
       id: '58694a0f-3da1-471f-bd96-145571e29d74',
       title: 'Third Item',
       imageUrl:
-        'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2017%2F04%2Fwilde-in-love-2000.jpg',
-    },
-    {
-      id: '58694a0f-3da1-471f-bd96-145571e29d76',
-      title: 'Third Item',
-      imageUrl:
-        'https://kbimages1-a.akamaihd.net/fc571a26-f5b1-44dd-b790-f4804f8706fc/1200/1200/False/my-angel-guardian-lesbian-romance.jpg',
-    },
-    {
-      id: '58694a0f-3da1-471f-bd96-145571e29d75',
-      title: 'Third Item',
-      imageUrl:
-        'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/romantic-love-story-book-cover-design-template-a1188e523cb9f6495f3c022a1d9d2928_screen.jpg?ts=1637008707',
+        'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/561b1483830519.5d48f1ff93014.jpg',
     },
   ];
   const renderItem = ({item}: any) => {
@@ -146,7 +134,7 @@ const ViewBook = (props: Props) => {
             content={
               <Image
                 source={{
-                  uri: 'https://bookcoverinsanity.files.wordpress.com/2021/06/castle-romance-3-copy.jpg?w=800',
+                  uri: 'https://assets.hongkiat.com/uploads/children-book-covers/breadcrumbs.jpg',
                 }}
                 style={{
                   width: 120,
