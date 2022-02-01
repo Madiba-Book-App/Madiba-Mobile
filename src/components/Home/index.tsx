@@ -10,6 +10,8 @@ import {Link, useNavigation} from '@react-navigation/native';
 import Card from '../common/Card';
 import Explore from '../common/Explore';
 import {BOOKS_SCREEN, VIEW_BOOK_SCREEN} from 'src/constants/screens';
+import useGetRequest from 'src/queryHooks/interfaces/useRequest';
+import {GET_BOOK} from 'src/queryHooks/constants/keys';
 const Home = () => {
   const {navigate} = useNavigation<NativeStackNavigationProp<any, any>>();
 
@@ -21,19 +23,19 @@ const Home = () => {
         'https://images.routledge.com/common/jackets/originals/978036753/9780367537937.tif',
     },
     {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28b1',
       title: 'First Item',
       imageUrl:
         'https://assets.hongkiat.com/uploads/children-book-covers/breadcrumbs.jpg',
     },
     {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28b2',
       title: 'First Item',
       imageUrl:
         'https://s3-ap-southeast-2.amazonaws.com/assets.allenandunwin.com/images/original/9781785785160.jpg',
     },
     {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28b3',
       title: 'First Item',
       imageUrl:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVcPsdbZZbFyMp_Lc-Y9hqT4uSweFdHNO84w&usqp=CAU',
@@ -47,23 +49,26 @@ const Home = () => {
   ];
   const DATASIM = [
     {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28b5',
       title: 'First Item',
       imageUrl: 'https://m.media-amazon.com/images/I/41RFpjsbwDL._SL500_.jpg',
     },
     {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28b6',
       title: 'First Item',
       imageUrl:
         'https://kbimages1-a.akamaihd.net/51a19474-a86d-4bb7-8b4b-6979625a207c/353/569/90/False/patience-is-virtue-learn-to-develop-patience.jpg',
     },
     {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28b7',
       title: 'First Item',
       imageUrl:
         'https://images-platform.99static.com//QYWt9hflpp9Iklq4WEqWG-8mKOU=/0x0:1650x1650/fit-in/590x590/99designs-contests-attachments/75/75544/attachment_75544031',
     },
   ];
+  const {data, error, isLoading} = useGetRequest('/books', GET_BOOK);
+  console.log('data ==>>>>>>>>>>>>', isLoading);
+
   const renderItem = ({item}) => {
     return (
       <TouchableOpacity
