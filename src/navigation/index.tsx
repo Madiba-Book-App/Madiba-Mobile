@@ -1,4 +1,6 @@
 import React from 'react';
+import storage from 'src/utils/mmkvStorage';
+
 import {
   NavigationContainer,
   DefaultTheme,
@@ -17,7 +19,11 @@ const AppTheme: Theme = {
     background: colors.white as string,
   },
 };
-const isAuth = true;
+const token = storage.getString('token');
+console.log('token', token);
+
+// const isAuth = (token && true) || false;
+const isAuth = false;
 
 export default function App() {
   return (

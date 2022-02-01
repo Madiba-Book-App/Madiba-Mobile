@@ -188,7 +188,7 @@ const Input = React.forwardRef(
 
           {!loading && secureTextEntry && (
             <TouchableOpacity
-              containerStyle={[styles.eyeButton]}
+              style={styles.eyeButton}
               onPress={(): void => setPasswordVisibility(!passwordVisible)}>
               {passwordVisible && <EyeOpenIcon width={s(20)} height={s(20)} />}
               {!passwordVisible && (
