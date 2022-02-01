@@ -67,7 +67,6 @@ const Home = () => {
     },
   ];
   const {data, error, isLoading} = useGetRequest('/books', GET_BOOK);
-  console.log('data ==>>>>>>>>>>>>', isLoading);
 
   const renderItem = ({item}) => {
     return (
