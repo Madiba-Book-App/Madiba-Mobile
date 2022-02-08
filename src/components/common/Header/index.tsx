@@ -1,17 +1,23 @@
 import React from 'react';
-import {StyleSheet, View, SafeAreaView, Image} from 'react-native';
+import {View, SafeAreaView, Image} from 'react-native';
 import commonStyles from 'src/assets/styles';
 import Icon from 'react-native-vector-icons/Ionicons';
 import colors from 'src/utils/colors';
 import {useNavigation} from '@react-navigation/native';
-import {BOOKS_SCREEN} from 'src/constants/screens';
+import {BOOKS_SCREEN, LOGIN_SCREEN} from 'src/constants/screens';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import storage from 'src/utils/mmkvStorage';
 interface Props {}
 
 const Header = (props: Props) => {
   const {navigate} = useNavigation<NativeStackNavigationProp<any, any>>();
   const imageURL =
     'https://bestprofilepix.com/wp-content/uploads/2014/07/cute-girls-profile-pictures-for-facebook-with-apple-I-phone.jpg';
+
+  const logOut = () => {
+    storage.delete('token');
+    navigate(LOGIN_SCREEN);
+  };
   return (
     <View>
       <SafeAreaView>
@@ -55,7 +61,7 @@ const Header = (props: Props) => {
               />
             </View>
             <View>
-              <Icon name="settings" size={30} />
+              <Icon name="settings" size={30} onPress={logOut} />
             </View>
           </View>
         </View>

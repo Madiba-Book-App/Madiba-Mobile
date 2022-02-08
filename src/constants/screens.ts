@@ -6,3 +6,4 @@ export const BOOKS_SCREEN = 'BOOKS_SCREEN';
 export const BORROW_SCREEN = 'BORROW_SCREEN';
 export const VIEW_BOOK_SCREEN = 'VIEW_BOOK_SCREEN';
 export const EVENT_SCREEN = 'EVENT_SCREEN';
+export const SETTINGS = 'SETTINGS';

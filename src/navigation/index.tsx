@@ -20,6 +20,7 @@ const AppTheme: Theme = {
   },
 };
 const token = storage.getString('token');
+console.log('token', token);
 
 const isAuth = (token && true) || false;
 
